@@ -195,7 +195,7 @@ func (rt resourceTransformerInject) transform(bytes []byte) ([]byte, []inject.Re
 		conf.AppendPodAnnotations(rt.overrideAnnotations)
 	}
 
-	patchJSON, err := conf.GetPatch(rt.injectProxy)
+	patchJSON, err := conf.GetPodPatch(rt.injectProxy)
 	if err != nil {
 		return nil, nil, err
 	}
